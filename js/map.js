@@ -2,6 +2,8 @@ const mapbox_key = 'pk.eyJ1IjoibGFkeWZtayIsImEiOiJjbDFjNWMzeW0wNGVkM2pucmJ0eDd5N
 
 export async function getMap(){
     mapboxgl.accessToken = mapbox_key;
+
+    
     
     const bikeStations = await getStations();
 
@@ -56,6 +58,14 @@ export async function getMap(){
             antialias: true
         }
     );
+
+
+    map.addControl(
+        new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        })
+    );
     
     geoStations.features.forEach(station => {
         const markerEl = document.createElement('div');
@@ -85,6 +95,19 @@ export async function getMap(){
         .addTo(map);
     });
 
+    navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position);
+
+        new mapboxgl.Marker({color: 'red'})
+        .setLngLat([position.coords.longitude, position.coords.latitude])
+        .addTo(map)
+
+        map.flyTo({
+            center: [position.coords.longitude, position.coords.latitude],
+            zoom: 18,
+            essential: true
+        });
+    });
 }
 
 
@@ -199,3 +222,5 @@ function popupMessage(station, address, availability, docks, moveTop) {
         })
     })
 }
+
+

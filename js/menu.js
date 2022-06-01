@@ -3,12 +3,15 @@ export function handleMenu() {
     const menuNavElement = document.querySelector('.menuNav');
     const closeElement = document.querySelector('.close');
 
-    menuNavElement.classList.add('hidden');
 
     hamburgerIcon.addEventListener('click', () => {
-        menuNavElement.classList.toggle('hidden');
+        menuNavElement.classList.remove('slide-out');
+        menuNavElement.classList.remove('hidden');
+        menuNavElement.classList.add('slide-in');
     });
     closeElement.addEventListener('click', () => {
-        menuNavElement.classList.add('hidden');
+        menuNavElement.classList.add('slide-out');
+        menuNavElement.classList.remove('slide-in');
     });
 }
+

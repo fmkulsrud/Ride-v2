@@ -7,48 +7,42 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mapbox-gl-geocoder.css" rel="stylesheet">
+    
 </head>
 <body>
     <header class="menu">
     
         <button class="hamburger" role="menu">
-            <img class="img" src="./assets/Icons/hamburger -blue.svg">
+            <img class="img" src="./assets/Icons/hamburger-blue.svg">
         </button>
         
         <nav class="menuNav hidden"> 
             <ul class="menu-space">
-                <li class="close"><img src="./assets/Icons/close.svg"></li>
-                <li class="box-card h4-700-18px">Din profil</li>
-                <li class="box-card h4-700-18px">Turhistorikk</li>
-                <li class="box-card h4-700-18px">Betalingskort</li>
-                <li class="box-card h4-700-18px">Betalinger</li>
-                <li class="box-card h4-700-18px">Innstillinger</li>
+                <li class="close"><img class="close-icon" src="./assets/Icons/close.svg"></li>
+                <a href="profile.html" class="link"><li class="box-card h4-700-18px">Din profil</li></a>
+                <a href="#" class="link"><li class="box-card h4-700-18px">Turhistorikk</li></a>
+                <a href="#" class="link"><li class="box-card h4-700-18px">Betalingskort</li></a>
+                <a href="#" class="link"><li class="box-card h4-700-18px">Betalinger</li></a>
+                <a href="#" class="link"><li class="box-card h4-700-18px">Innstillinger</li></a>
             </ul>
             <img class="blue-logo" src="./assets/Images/RideBlue.png">
         </nav>
         
-        <img class="imgLogo" src="assets/Icons/Logo small.svg">
+        <img class="imgLogo" src="assets/Icons/smallLogo 2.svg">
     </header>
 
     <div class="weatherNav">
         <section class="container">
-            <img class="weather-icon" src="./assets/Icons/rain.svg">
-            <span class="weather-content" id="app"></span>
+            <img id="weather-icon" class="settings">
+            <span class="weather-content"></span>
             <img class="weather-content" src="./assets/Icons/waterTemp.svg">
-            <p>2 Badetemperatur</p>
+            
+            <p id="average-beaches-temp"></p>
             <section id="app"></section>
         </section>
     </div>
 
-    <div class="wrapper">
-        <div class="search-box">
-            <i class="seach-icon"></i>
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-             </button>
-        </div>
-        <input type="text" class="input_search" placeholder="Skriv et sted eller en adresse">
-    </div>
 
     <div class="pop-up-box hidden">
         <button id="close-pop"><img src="./assets/Icons/close2.svg"></button>
@@ -58,7 +52,8 @@
     <main id="map"></main>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
-
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    
     <script type="module" src="./js/app.js" async></script>
 </body>
 </html>
