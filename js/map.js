@@ -178,7 +178,7 @@ function popupMessage(station, address, availability, docks, moveTop) {
     const availabilityP =document.createElement('p');
     availabilityP.classList.add('popupMenu');
     availabilityP.classList.add('content-stations');
-    availabilityP.textContent = `${availability} Tilgjengelig`;
+    availabilityP.textContent = `${availability} Tilgjengelig sykler`;
     availabilityContainer.append(availabilityP);
     popUpBox.append(availabilityContainer);
 

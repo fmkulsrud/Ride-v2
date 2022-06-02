@@ -97,7 +97,7 @@ topNav {
 }
 
 .img {
-    width: auto;
+    width: 95%;
     height: 100%;
 }
 
@@ -522,9 +522,9 @@ p {
 }
 
 .card2 {
-    width: 165px;
+    width: 40%;
     height: 260px;
-    margin: 20px;
+    margin: 18px;
     padding: 10px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.05)
 
