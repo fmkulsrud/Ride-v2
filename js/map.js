@@ -71,6 +71,7 @@ export async function getMap(){
         const markerEl = document.createElement('div');
         let moveTop = false;
         markerEl.classList.add('marker');
+        markerEl.setAttribute("availability", station.properties.availability)
         markerEl.addEventListener('click', (event) => {
             const allMarkers = document.querySelectorAll('.marker');
             allMarkers.forEach((item) => {
@@ -104,7 +105,7 @@ export async function getMap(){
 
         map.flyTo({
             center: [position.coords.longitude, position.coords.latitude],
-            zoom: 18,
+            zoom: 19,
             essential: true
         });
     });

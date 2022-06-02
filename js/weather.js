@@ -18,7 +18,7 @@ export async function getWeather() {
     //logger resultatet av all koden
 
     const temperaturElement = document.querySelector('.weather-content');
-    temperaturElement.textContent = `${currentTemperature}`;
+    temperaturElement.textContent = `${currentTemperature} ° Værmelding`;
     // temperaturElement.textContent = currentTemperature 'Været i dag';
     //mainEl.append(temperaturElement);
 

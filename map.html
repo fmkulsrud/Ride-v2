@@ -11,42 +11,58 @@
     
 </head>
 <body>
+
     <header class="menu">
+        <div role="menubar" class="menu-bar">
+            <button class="hamburger" role="menu">
+                <img class="img" src="./assets/Icons/hamburger-white.svg" alt="Hamburger meny">
+            </button>
+            <a href="map.html">
+                <img class="imgLogo" src="assets/Icons/logo-white.svg" alt="Ride logo">
+            </a>
+        </div>
     
-        <button class="hamburger" role="menu">
-            <img class="img" src="./assets/Icons/hamburger-blue.svg">
-        </button>
+        <!-- <div role="menubar">
+            <button class="hamburger" role="menu" aria-label="Meny" >
+                <img class="img" src="./assets/Icons/hamburger-blue.svg" alt="Hamburger meny">
+            </button>
+        </div> -->
         
+    
+    </header>
+
+    <div class="profile-nav"> 
         <nav class="menuNav hidden"> 
             <ul class="menu-space">
-                <li class="close"><img class="close-icon" src="./assets/Icons/close.svg"></li>
-                <a href="profile.html" class="link"><li class="box-card h4-700-18px">Din profil</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Turhistorikk</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Betalingskort</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Betalinger</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Innstillinger</li></a>
+                <li class="close"><img class="close-icon" src="./assets/Icons/close.svg" alt="Ikon for å lukke hamburger meny"></li>
+                <a href="profile.html" class="link"><li class="box-card h4-400-18px">Din profil</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Turhistorikk</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Betalingskort</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Betalinger</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Innstillinger</li></a>
             </ul>
-            <img class="blue-logo" src="./assets/Images/RideBlue.png">
+            <img class="blue-logo" src="./assets/Icons/newLogo.svg" alt="Ride logo">
         </nav>
-        
-        <img class="imgLogo" src="assets/Icons/smallLogo 2.svg">
-    </header>
+    </div>
+    
 
     <div class="weatherNav">
         <section class="container">
-            <img id="weather-icon" class="settings">
+            <div id="weather-icon" class="settings" alt="Værmelding ikon"></div>
             <span class="weather-content"></span>
-            <img class="weather-content" src="./assets/Icons/waterTemp.svg">
-            
+           
+            <img class="swimming-icon" src="./assets/Icons/waterTemp.svg" alt="Værmelding ikon for badetempretatur">
             <p id="average-beaches-temp"></p>
             <section id="app"></section>
+            
         </section>
     </div>
 
 
     <div class="pop-up-box hidden">
-        <button id="close-pop"><img src="./assets/Icons/close2.svg"></button>
         
+        <button id="close-pop"><img src="./assets/Icons/close2.svg" aria-label="Lukk popup boks med info. om stasjon"></button>
+
     </div>
 
     <main id="map"></main>

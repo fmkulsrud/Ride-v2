@@ -10,59 +10,60 @@
 </head>
 <body>
     <header class="menu">
-    
-        <button class="hamburger" role="menu">
-            <img class="img" src="./assets/Icons/hamburger-blue.svg">
-        </button>
+        <div role="menubar" class="menu-bar">
+            <button class="hamburger" role="menu">
+                <img class="img" src="./assets/Icons/hamburger-white.svg" alt="Hamburger meny">
+            </button>
+            <a href="map.html">
+                <img class="imgLogo" src="assets/Icons/logo-white.svg" alt="Ride logo">
+            </a>
+        </div>
+        <p class="h3-500-20px white-header-text">Hei Jonas!</p>
+    </header>
+
+    <div class="profile-nav">
         
         <nav class="menuNav hidden"> 
             <ul class="menu-space">
-                <li class="close"><img class="close-icon" src="./assets/Icons/close.svg"></li>
-                <a href="profile.html" class="link"><li class="box-card h4-700-18px">Din profil</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Turhistorikk</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Betalingskort</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Betalinger</li></a>
-                <a href="#" class="link"><li class="box-card h4-700-18px">Innstillinger</li></a>
+                <li class="close"><img class="close-icon" src="./assets/Icons/close.svg" alt="Ikon for å lukke hamburger meny"></li>
+                <a href="profile.html" class="link"><li class="box-card h4-400-18px">Din profil</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Turhistorikk</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Betalingskort</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Betalinger</li></a>
+                <a href="#" class="link"><li class="box-card h4-400-18px">Innstillinger</li></a>
             </ul>
-            <img class="blue-logo" src="./assets/Images/RideBlue.png">
+            <img class="blue-logo" src="./assets/Images/RideBlue.png" alt="Ride logo">
         </nav>
-        
-        <div>
-            <img class="imgLogo" src="assets/Icons/smallLogo 2.svg">
-            <a href="map.html"></a>
-        </div>
-        <!-- <button class="settings">
-            <img class="img" src="./assets/Icons/settings.svg" alt="Innstillinger ikon">
-        </button> -->
-    </header>
+    </div>
 
-    <div class="weatherNav">
+    <div class="weatherNav weather-profile">
         <section class="container">
-            <img id="weather-icon">
+            <div id="weather-icon" class="settings" alt="Værmelding ikon"></div>
             <span class="weather-content"></span>
-            <img class="weather-content" src="./assets/Icons/waterTemp.svg">
-            <p>2 Badetemperatur</p>
+            
+            <img class="swimming-icon" src="./assets/Icons/waterTemp.svg" alt="Værmelding ikon for badetempratur">
+            <p id="average-beaches-temp"></p>
             <section id="app"></section>
+
         </section>
     </div>
 
-
     <div class="pop-up-box hidden">
-        <button id="close-pop"><img src="./assets/Icons/close2.svg"></button>
+        <button id="close-pop"><img src="./assets/Icons/close2.svg" aria-label="Lukk popup boks med info. om stasjon"></button>
     </div>
 
-    <section>
-        <h2 class="h3-400-20px name-profile">
-            Hei Jonas!
-        </h2>
-    </section>
+    
+    <div class="toggleBox h4-400-18px">
+        Dine turer
+    </div>
+   
 
     <section class="tileContainer">
         <div class="card2">
             <img class="card-img-top" src="./assets/Images/Placeholderimg.png" alt="Bilde på toppen">
             <div class="card-body">
                 <h5 class="h4-700-18px-oj card-title">Vippa mathall</h5>
-                <p class="card-text">1.7 km -  min</p>
+                <p class="card-text">1.7 km - 8 min</p>
                 <div class="button-container">
                     <button class="next-btn">
                         <img src="./assets/Icons/nextbutton.svg" alt="Les mer om attraksjon">
@@ -77,7 +78,7 @@
             <img class="card-img-top" src="./assets/Images/Tjuvholmen.png" alt="Bilde på toppen">
             <div class="card-body">
                 <h5 class="h4-700-18px-oj card-title">Tjuvholmen badeplass</h5>
-                <p class="card-text">1.5km 4 min</p>
+                <p class="card-text">1.5km - 4 min</p>
                
                 <div class="button-container">
                     <button class="next-btn">
@@ -111,7 +112,7 @@
         <div class="card2">
             <img class="card-img-top" src="./assets/Images/Xef.png" alt="Bilde på toppen">
             <div class="card-body">
-                <h5 class="h4-700-18px-oj card-title"></h5>
+                <h5 class="h4-700-18px-oj card-title">Xef</h5>
                 <p class="card-text">4.3 km - 17 min</p>
 
                 <div class="button-container">
@@ -123,6 +124,7 @@
             </div>
         </div>
     </section>
+
 
     <script type="module" src="./js/app.js" async></script>
 </body>

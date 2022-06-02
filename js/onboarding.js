@@ -1,3 +1,3 @@
 setTimeout(() => {
     window.location.href = 'map.html'
-}, 3000);
+}, 1500);

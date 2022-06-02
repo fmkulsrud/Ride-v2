@@ -13,10 +13,14 @@ h1 {
 .weatherNav {
     position: relative;
     display: flex;
-    margin: 20px;
+    margin: 8px 0 10px 0;;
     justify-content: space-between;
     gap: 10px;
     z-index: auto;
+}
+
+.weather-profile{
+    margin: 5px 0 0 0;
 }
 
 .container {
@@ -39,21 +43,34 @@ h1 {
 }
 
 #weather-icon {
-    margin:10px;
+    margin:10px 0 10px 10px;
     background-image: url("../assets/Icons/rain.svg");
-    background-size: contain;
+    background-size:contain;
     /* height: 100%; */
-    width: 50px;
+    min-width: 40px;
+    height: 40px;
     background-position: center;
-    margin-left: 10%;
     background-repeat: no-repeat;
     border: none;
+}
+
+.swimming-icon {
+    margin: 10px 0 10px 10px;
+    min-width: 40px;
+    height: 40px;
+}
+
+#average-beaches-temp {
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+    width: auto;
+    align-content: center;
 }
 
 #map {
     width: 100vw;
     height: 100vh;
-    background: #F5F5F5;
+    background: #FEFEFE;
 }
 
 #app {
@@ -61,13 +78,16 @@ h1 {
 }
 
 header {
-    height: 70px;
-    width: 77vw;
+    height: 200px;
+    width: 500vw;
+}
 
+.profile-nav {
+    display: flex;
 }
 
 topNav {
-    background-color: #F5F5F5; 
+    background-color: #FEFEFE; 
 }
 
 /* menu*/ 
@@ -94,7 +114,7 @@ topNav {
     height: 52px;
     width: 208px;
     background-color: #286EF1;
-    color: white;
+    color: #FEFEFE;
     text-align: center;
     padding: 15px;
     font-weight: 600;
@@ -102,19 +122,10 @@ topNav {
 
 .menu {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap: 120px;
-    align-items: center;
     z-index: 4;
-}
-
-@media  screen and (max-width: 600px) {
-    .menu {
-        justify-content:start;
-        gap: 90px;
-        
-    }
+    background-image: url(../assets/Icons/wavyheader.svg);
+    background-repeat: no-repeat;
+    width: 100vw;
 }
 
 .hamburger {
@@ -125,7 +136,7 @@ topNav {
     cursor: pointer;
     width: 50px;
     height: 50px;
-    background-color: #FFFDFD;
+    background-color: transparent;
 }
 
 .link{
@@ -140,6 +151,7 @@ topNav {
     width: 50px;
     height: 70px;
     display: inline-block;
+    margin: 10px;
 }
 
 .close {
@@ -162,6 +174,7 @@ topNav {
     display: block;
     border-style: none;
     margin: 5px;
+    background-color: #fefefe;
 }
 
 .pop-up-box {
@@ -170,7 +183,7 @@ topNav {
     margin: 0 5%;
     position: absolute;
     bottom: 0px;
-    background-color: #F5F5F5;
+    background-color: #FEFEFE;
     z-index: 400;
     cursor: pointer;
     border-radius: 5px;
@@ -218,15 +231,24 @@ topNav {
     top: 0;
     left: 0;
     background-color:#286EF1;
-    color: white;
+    color: #FEFEFE;
     width: 80vw;
     height: 100vh;
+    z-index: 400;
 }
 
 .menuNav ul {
     list-style: none;
     padding: 20px;
 }
+
+.menu-bar{
+    display: flex;
+    width: 100vw;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
 
 .hidden {
     display: none;
@@ -273,7 +295,7 @@ main ul {
 }
 
 main ul li {
-    color: #ffffff;
+    color: #FEFEFE;
     background-color: #286EF1;
     height: 100px;
     width: 100px;
@@ -281,8 +303,14 @@ main ul li {
 }
 
 .white-400 {
-    background-color: #ffffff;
+    background-color: #FEFEFE;
     color: black;
+}
+
+.white-header-text {
+    color: #FEFEFE;
+    text-align: center;
+    margin: 20px;
 }
 
 .black-400 {
@@ -292,17 +320,17 @@ main ul li {
 
 .blue-500 {
     background-color: #286EF1;
-    color: #ffffff;
+    color: #FEFEFE;
 }
 
 .blue-400 {
     background-color: #4A4DE7;
-    color: #ffffff;
+    color: #FEFEFE;
 }
 
 .blue-300 {
     background-color: #7EA6F4;
-    color: #ffffff;
+    color: #FEFEFE;
 }
 
 
@@ -392,7 +420,7 @@ main ul li {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.125rem;
-    color: #F5F5F5;
+    color: #FEFEFE;
 }
 
 .h4-500-18px {
@@ -405,6 +433,7 @@ main ul li {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1.125rem;
+    color: #FEFEFE;
 }
 
 .h4-200-18px {
@@ -431,19 +460,34 @@ p {
     background-repeat: no-repeat;
 }
 
+.marker:before {
+    content: attr(availability);
+    color: #286EF1;
+    font-size: 16px;
+    position: absolute;
+    top: 7px;
+    left: 11px;
+}
+
+.marker-active:before {
+    content: attr(availability);
+    color: #fff;
+    font-size: 16px;
+   
+}
+
 .marker-active {
     display: block;
     border: none;
     cursor: pointer;
     padding: 0;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-image: url(../assets/Icons/bikesActive.svg);
-    background-size: 70%;
-    background-position: center;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
-o
+
 .menu-space {
     margin: 10px;
 }
@@ -536,11 +580,12 @@ o
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 103px;
 }
 
 .blue-logo {
     display: block;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .wrap{
@@ -601,3 +646,14 @@ o
       margin: 20px;
       color: #252525;
   }
+
+.toggleBox {
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    text-align: center;
+    margin: 10px;
+    color: #252525;
+}
+
+  

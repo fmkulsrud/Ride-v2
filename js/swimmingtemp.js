@@ -8,9 +8,9 @@ export async function getWatertemp () {
 
     const averageTemp = (result.reduce((previous, current) => {
         return previous + current.temperature
-    }, 0) / result.length);
+    }, 0) / result.length).toFixed(1);
 
     console.log(averageTemp)
     const averageTempEl = document.getElementById('average-beaches-temp');
-    averageTempEl.textContent = `${averageTemp} badetemperatur`;
+    averageTempEl.textContent = `${averageTemp} ° Badetempratur`;
 }
