@@ -128,6 +128,15 @@ topNav {
     width: 100vw;
 }
 
+.menu-small {
+    position: relative;
+    z-index: 4;
+    background-image: url(../assets/Icons/wavyheaderSmall.svg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 150px;
+}
+
 .hamburger {
     display: block;
     padding: 10px;
@@ -654,6 +663,13 @@ p {
     text-align: center;
     margin: 10px;
     color: #252525;
+}
+
+.suggestions li {
+    width: 100%;
+    background-color: #fefefe;
+    border-bottom: 2px;
+    border-color: #252525;
 }
 
   
