@@ -13,7 +13,7 @@ h1 {
 .weatherNav {
     position: relative;
     display: flex;
-    margin: 8px 0 10px 0;;
+    margin: 0 0 10px 0;;
     justify-content: space-between;
     gap: 10px;
     z-index: auto;
@@ -134,7 +134,7 @@ topNav {
     background-image: url(../assets/Icons/wavyheaderSmall.svg);
     background-repeat: no-repeat;
     width: 100vw;
-    height: 150px;
+    height: auto;
 }
 
 .hamburger {
@@ -209,12 +209,13 @@ topNav {
 .station-header {
     text-align: left;
     color: black;
+    margin: 0 0 0 70px;
     
 }
 
 .address-box {
     text-align: left;
-    margin: 8px 70px;
+    margin: 8px 30px 0 70px;
     color: black;
 }
 
@@ -228,7 +229,7 @@ topNav {
 }
 
 .bike-station-icon {
-    margin: 3px 0 0 23px;
+    margin: 3px 0 0 17px;
 }
 
 .docks-station-icon {

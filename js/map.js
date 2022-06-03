@@ -2,13 +2,10 @@ const mapbox_key = 'pk.eyJ1IjoibGFkeWZtayIsImEiOiJjbDFjNWMzeW0wNGVkM2pucmJ0eDd5N
 
 export async function getMap(){
     mapboxgl.accessToken = mapbox_key;
-
-    
     
     const bikeStations = await getStations();
 
     const bikeStationsStatus = await getStatus();
-
 
     // Vi trenger en funksjon som henter ut status av hver eneste stasjon. 
     // Vi må retunere for å ta i bruk funksjon.
@@ -77,16 +74,19 @@ export async function getMap(){
             allMarkers.forEach((item) => {
                 item.classList.remove('marker-active');
             })
-            console.log(event.y);
             if(event.y > 440) {
-                moveTop = true;
+                moveTop = false; // set to true if you want popup react to position
             }
+            const weatherCardEl = document.querySelector(".weatherNav");
+            weatherCardEl.classList.add("hidden");
             popupMessage(
                 station.properties.station, 
                 station.properties.address,
                 station.properties.availability,
                 station.properties.docks,
-                moveTop
+                moveTop,
+                station.geometry.coordinates,
+                map
                 )
             markerEl.classList.add('marker-active');
         });
@@ -129,7 +129,7 @@ async function getStatus() {
 }
 getStatus();
 
-function popupMessage(station, address, availability, docks, moveTop) {
+function popupMessage(station, address, availability, docks, moveTop, center, map) {
     const allMarkers = document.querySelectorAll('.marker')
     const popUpBox = document.querySelector('.pop-up-box');
     popUpBox.style.bottom = '0';
@@ -138,6 +138,12 @@ function popupMessage(station, address, availability, docks, moveTop) {
     if(moveTop) {
         popUpBox.style.bottom = '240px';
     }
+
+    map.flyTo({
+        center: center,
+        zoom: 18,
+        essential: true
+    });
 
     const checkPEl = document.querySelectorAll('.pop-up-box p');
     if(checkPEl.length > 0){
@@ -152,10 +158,13 @@ function popupMessage(station, address, availability, docks, moveTop) {
     }
     }
 
+   
+  
+
     const stationBox = document.createElement('p');
-    stationBox.classList.add('h3-700-20px');
+    stationBox.classList.add('h3-500-20px');
     stationBox.classList.add('station-header');
-    stationBox.classList.add('popupMenu');
+    
     stationBox.textContent = `${station}`;
     popUpBox.append(stationBox);
 
@@ -200,16 +209,11 @@ function popupMessage(station, address, availability, docks, moveTop) {
     popUpBox.append(docksContainer);
 
 
-/*     const reserveBikeBtn = document.createElement('p');
-    reserveBikeBtn.classList.add('p');
-    reserveBikeBtn.classList.add('popupMenu');
-    reserveBikeBtn.classList.add('book-bike-btn');
-    reserveBikeBtn.textContent = `Reserver sykkel`;
-    popUpBox.append(reserveBikeBtn); */
-
-
     const closePopUp = document.querySelector('#close-pop');
     closePopUp.addEventListener('click', () => {
+        const weatherCardEl = document.querySelector(".weatherNav");
+        weatherCardEl.classList.remove("hidden");
+
         stationBox.remove();
         addressBox.remove();
         availabilityP.remove();
