@@ -56,7 +56,6 @@ export async function getMap(){
         }
     );
 
-
     map.addControl(
         new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -111,7 +110,6 @@ export async function getMap(){
     });
 }
 
-
 async function getStations() {
     const corsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://gbfs.urbansharing.com/oslobysykkel.no/station_information.json')}`;
     const response = await fetch(corsUrl);
@@ -158,9 +156,6 @@ function popupMessage(station, address, availability, docks, moveTop, center, ma
     }
     }
 
-   
-  
-
     const stationBox = document.createElement('p');
     stationBox.classList.add('h3-500-20px');
     stationBox.classList.add('station-header');
@@ -174,7 +169,6 @@ function popupMessage(station, address, availability, docks, moveTop, center, ma
     addressBox.classList.add('address-box');
     addressBox.textContent = `Ved ${address}`;
     popUpBox.append(addressBox);
-
 
     // Vi må lage en flex box for å ha både icon og tekst ved siden av hverandre. 
     //Dette må vi lage når vi skal lage boks som innkluderer tilgjengelighet. 
@@ -191,7 +185,6 @@ function popupMessage(station, address, availability, docks, moveTop, center, ma
     availabilityContainer.append(availabilityP);
     popUpBox.append(availabilityContainer);
 
-
     //Bruker denne koden får å vise antall docks ledige sammen med sitt ikon. 
     //Dette blir laget inne i en flex box. 
     //Når vi bruker SetAttribute så forventer kode at vi skriver inn to ting.
@@ -207,7 +200,6 @@ function popupMessage(station, address, availability, docks, moveTop, center, ma
     availabilityP2.textContent = `${docks} Ledige stasjoner`;
     docksContainer.append(availabilityP2);
     popUpBox.append(docksContainer);
-
 
     const closePopUp = document.querySelector('#close-pop');
     closePopUp.addEventListener('click', () => {
