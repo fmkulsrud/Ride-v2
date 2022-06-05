@@ -14,3 +14,10 @@ Index.html er onboarding siden,
 map.html er der man finner selve karte og hovedfunksjonen for appen, og 
 profile.html er siden en finner informasjon over steder man har nylig besøkt.
 
+## Netlify link
+### Husk å høyreklikke på nettside, deretter klikk på inspiser og endre til mobil view. Dette er for dette en mobil app.
+### Passer for mobil iPhone SE / iPhone 6,7,8 pluss. Hvis noe innhold ikke passer skjerm så er det bare å zoome ut. 
+
+https://629cdf3b61a2a56352bd8abd--glittery-queijadas-8ef5d9.netlify.app/
+
+
